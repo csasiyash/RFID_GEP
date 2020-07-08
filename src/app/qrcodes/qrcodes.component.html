@@ -1,0 +1,108 @@
+<body>
+  <div class="row">
+    <div class="col-sm-3 first"></div>
+    <div class="col-sm-6 second">
+      <div class="parent">
+        <div class="segment">
+          <div class="form-group">
+            <label for="usr" class="col-sm-2 col-form-label">Item Name<span class="red">*</span>
+            </label>
+            <textarea type="text" class="form-control col-sm-10" row="3" [(ngModel)]="itemName"
+              placeholder="Enter Your Text Here">
+          </textarea>
+          </div>
+          <div class="form-group">
+            <label for="comment" class="col-sm-2 col-form-label">Item Description
+            </label>
+            <textarea class="form-control col-sm-10" rows="3" [(ngModel)]="itemDescription"
+              placeholder="Enter Your Text Here">
+            </textarea>
+          </div>
+
+
+          <div class="segment1">
+            <form role="form" method="post" id="reused_form">
+              <div class="row">
+                <div class="form-group">
+                  <label for="name" class="col-sm-2 col-form-label">
+                    Active/Bulky<span class="red">*</span></label>
+                  <input type="text" class="form-control" maxlength="1" onkeyup="this.value = this.value.toUpperCase();"
+                    [(ngModel)]="itemActiveBulky" name="hello" (input)="onUpdateActiveBulky($event)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label for="name" class="col-sm-2 col-form-label">
+                    Aisle Number<span class="red">*</span></label>
+                  <input type="text" class="form-control" maxlength="2" onkeyup="this.value = this.value.toUpperCase();"
+                    [(ngModel)]="itemAisleNumber" name="hello" (input)="onUpdateAisleNumber($event)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label for="name" class="col-sm-2 col-form-label">
+                    Product Rack<span class="red">*</span></label>
+                  <input type="text" class="form-control" maxlength="3" onkeyup="this.value = this.value.toUpperCase();"
+                    [(ngModel)]="itemProductRack" name="hello" (input)="onUpdateProductRack($event)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label for="name" class="col-sm-2 col-form-label">
+                    Unit ID<span class="red">*</span></label>
+                  <input type="text" class="form-control" maxlength="3" onkeyup="this.value = this.value.toUpperCase();"
+                    [(ngModel)]="itemItemID" name="hello" (input)="onUpdateItemID($event)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 form-group">
+                  <label for="name" class="col-sm-2 col-form-label">
+                    Final Locations<span class="red">*</span></label>
+                  <textarea class="form-control" type="textarea" disabled [(ngModel)]="finalLocation" name="message"
+                    placeholder="Your Final Location will be displayed here" rows=" {{countRow}}"></textarea>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary btn-lg  btn-complete alignment" (click)="locationComplete()"> Add
+        Location
+      </button>
+
+
+      <button type="button" class="btn btn-primary btn-lg  btn-success alignment" (click)="onGenerate()">Generate QR
+        Code
+      </button>
+      <img [src]="url" height="100">
+
+
+      <div class="container">
+        <p *ngIf="generateStatus">
+          <qrcode [level]="1" [qrvalue]="itemValue">
+          </qrcode>
+          <!-- {{ afterGenerate() }} -->
+        </p>
+      </div>
+
+      <a class="btn btn-success" [href]="href" *ngIf="display" (click)="downloadImage()" download>Download Image</a>
+
+      <div class="form-group">
+        <h4><b>{{ message }}</b></h4>
+      </div>
+      <!-- <button
+     type="button"
+     class="btn btn-primary btn-lg btn-block btn-reset"
+     (click) = "onReset()" >Reset
+    </button> -->
+
+      <button type="button" class="btn btn-primary btn-lg btn-danger btn-reset"
+        onClick="window.location.reload();">Reset
+      </button>
+    </div>
+    <div class="col-sm-3 third"></div>
+  </div>
+</body>

@@ -1,0 +1,85 @@
+a {
+  background-color: palegreen;
+  text-decoration: none;
+  color: blue;
+  display: block;
+  height: 100%;
+  width: 20%;
+  padding: 5px;
+  margin: auto;
+  text-align: center;
+}
+
+#mainform{
+  background-color: green;
+}
+
+#extended{
+  background-color: #D11904;
+}
+
+.container{
+  text-align: center;
+  width: 100%;
+}
+
+.second{
+  background-color: skyblue;
+  padding: 20px 0px;
+  border-radius: 40px;
+
+}
+body{
+  /* margin: auto; */
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: whitesmoke;
+  padding: 40px 0px;
+}
+
+label{
+  margin: 10px 05px;
+  font-size: 2rem;
+  align-self: center;
+  display: block;
+  width: 200px;
+}
+
+#finallocation{
+  color: black;
+  font-size: large;
+  background-color: azure;
+}
+
+.form-control{
+width: 65%;
+/* margin: auto; */
+padding: 25px;
+border-radius: 30px;
+font-size: large;
+align-self: center;
+background-color: antiquewhite;
+}
+
+.alignment{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+
+.red{
+  color: #D11904;
+}
+
+
